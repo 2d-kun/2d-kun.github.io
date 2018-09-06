@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+    <style>
+
+    	html {
+    	    min-height: 100%;
+    	    -webkit-background-size: cover;
+    	    -moz-background-size: cover;
+    	    -o-background-size: cover;
+    	    background-size: cover;
+    	    background: #70bg32;
+    	    background-repeat:no-repeat;
+    	    background: -webkit-linear-gradient(bottom, blue, turquoise);
+    	    background: -moz-linear-gradient(bottom, blue, turquoise);
+    	    background: -o-linear-gradient(bottom, blue, turquoise);
+    	    background: linear-gradient(to top, blue, turquoise);
+    		}
+
+    </style>
+
+    <ol class="breadcrumb">
+	<li class="breadcrumb-item active"><a href="index.html">Home</a></li>
+	<li class="breadcrumb-item"><a href="mywork.html">My works</a></li>
+	<li class="breadcrumb-item"><a href="games.html">games</li></a>
+	</ol>
+
+    <link href="sindex.css" rel="stylesheet"/>
+    <link href="bootstrap-official.css" rel="stylesheet"/>
+    <link href="components-min.css" rel="stylesheet"/>
+    <link href="components.css" rel="stylesheet"/>
+    <link href="equinox-min.css" rel="stylesheet"/>
+    <link href="equinox.css" rel="stylesheet"/>
+
+    <title>Abel's website</title>
+
+    </head>
+
+    <body>
+
+    <style>
+			@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+			@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+			@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+			.fade-in {
+				-webkit-transform: translateZ(0);
+				-moz-transform: translateZ(0);
+				-ms-transform: translateZ(0);
+				-o-transform: translateZ(0);
+				transform: translateZ(0);
+
+			    opacity:0;  /* make things invisible upon start */
+			    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+			    -moz-animation:fadeIn ease-in 1;
+			    animation:fadeIn ease-in 1;
+
+			    -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+			    -moz-animation-fill-mode:forwards;
+			    animation-fill-mode:forwards;
+
+			    -webkit-animation-duration:1s;
+			    -moz-animation-duration:1s;
+			    animation-duration:1s;
+			}
+
+			@-webkit-keyframes fadeInDelta { from { opacity:0; } to { opacity:.25; } }
+			@-moz-keyframes fadeInDelta { from { opacity:0; } to { opacity:.25; } }
+			@keyframes fadeInDelta { from { opacity:0; } to { opacity:.25; } }
+
+			.fade-in-delta {
+				-webkit-transform: translateZ(0);
+				-moz-transform: translateZ(0);
+				-ms-transform: translateZ(0);
+				-o-transform: translateZ(0);
+				transform: translateZ(0);
+
+			    -webkit-animation:fadeInDelta ease-in 1;
+			    -moz-animation:fadeInDelta ease-in 1;
+			    animation:fadeInDelta ease-in 1;
+
+			    -webkit-animation-fill-mode:forwards;
+			    -moz-animation-fill-mode:forwards;
+			    animation-fill-mode:forwards;
+
+			    -webkit-animation-duration:1s;
+			    -moz-animation-duration:1s;
+			    animation-duration:1s;
+			}
+
+			.fade-one {
+				-webkit-animation-delay: 1s;
+				-moz-animation-delay: 1s;
+				animation-delay: 1s;
+			}
+
+			.fade-two {
+				-webkit-animation-delay: 3s;
+				-moz-animation-delay:3s;
+				animation-delay: 3s;
+			}
+
+			.fade-three {
+				-webkit-animation-delay: 4.5s;
+				-moz-animation-delay: 4.5s;
+				animation-delay: 4.5s;
+			}
+
+			.fade-four {
+				-webkit-animation-delay: 6.5s;
+				-moz-animation-delay: 6.5s;
+				animation-delay: 6.5s;
+			}
+
+		</style>
+    <div id="center">
+	<font color="purple"><div id="cussof"><h1 class="fade-in fade-one">Welcome to my website :)</h1><p class="fade-in fade-two">it has epic games</p><p class="fade-in fade-three">like the one below</p></font></div>
+    </div>
+
+
+<div id="center" class="fade-in fade-four">
+    <div id="emulator">
+		<br>
+		<a href="http://www.adobe.com/go/getflashplayer">
+			<img src="//www.adobe.com/images/shared/download_buttons/get_adobe_flash_player.png" alt="Get Adobe Flash player"/>
+		</a>
+	</div>
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
+
+<script type="text/javascript">
+
+	var resizeOwnEmulator = function(width, height)
+	{
+		var emulator = $('#emulator');
+		emulator.css('width', width);
+		emulator.css('height', height);
+	}
+
+	$(function()
+	{
+		function embed()
+		{
+			var emulator = $('#emulator');
+			if(emulator)
+			{
+				var flashvars =
+				{
+					system : 'gba',
+					url : 'loz.gba'
+				};
+				var params = {};
+				var attributes = {};
+
+				params.allowscriptaccess = 'sameDomain';
+				params.allowFullScreen = 'true';
+				params.allowFullScreenInteractive = 'true';
+
+				swfobject.embedSWF('bin/Nesbox.swf', 'emulator', '800', '600', '11.2.0', 'bin/expressInstall.swf', flashvars, params, attributes);
+			}
+		}
+
+		embed();
+	});
+
+</script>
+</div>
+</div>
+
+    <!-- <div id="fadein"><p>Welcome to my website :)</p></div>
+    </br>
+    <invi><div id="fadein"><p>it has games</p></invi></div> -->
+
+
+    </body>
+
+</html>
